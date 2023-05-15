@@ -17,7 +17,7 @@ pipeline {
 		stages {
 			stage('Build') {
 				steps {
-					sh 'mvn --version' //sh-shell script is used to print the actual value.
+					//sh 'mvn --version' //sh-shell script is used to print the actual value.
 					sh 'node --version'
 					echo "Build"
 				}
