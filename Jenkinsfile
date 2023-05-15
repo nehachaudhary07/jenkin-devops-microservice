@@ -26,7 +26,7 @@ pipeline {
 				steps {
 					sh 'mvn --version' //sh-shell script is used to print the actual value.
 					//sh 'node --version'
-					sh 'docker cmdversion'
+					sh 'docker version'
 					echo "Build"
 					echo "PATH - $PATH"
 					echo "BUILD_NUMBER - $env.BUILD_NUMBER"
