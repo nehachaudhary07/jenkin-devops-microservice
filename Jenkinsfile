@@ -14,11 +14,19 @@ pipeline {
 		// 		image 'node:13.8'
 		// 	}
 		// }
+
+		environment {
+			dockerHome = tool 'myDocker'
+			mavenHome = tool 'myMaven'
+			PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+		}
+
 		stages {
 			stage('Build') {
 				steps {
-					//sh 'mvn --version' //sh-shell script is used to print the actual value.
+					sh 'mvn --version' //sh-shell script is used to print the actual value.
 					//sh 'node --version'
+					sh 'docker cmdversion'
 					echo "Build"
 					echo "PATH - $PATH"
 					echo "BUILD_NUMBER - $env.BUILD_NUMBER"
