@@ -6,11 +6,17 @@
 // }
 
 //DECLARATIVE
-pipeline {	
-		agent any
+pipeline {
+		//agent any
+		agent {
+			docker {
+				image 'maven:3.6.3'
+			}
+		}
 		stages {
 			stage('Build') {
 				steps {
+					sh 'mvn --version' //sh-shell script is used to print the actual value.
 					echo "Build"
 				}
 			}
